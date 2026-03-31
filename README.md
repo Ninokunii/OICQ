@@ -1,3 +1,5 @@
+![OICQ hero](./20260331-1838-generated.jpg)
+
 # OICQ
 
 [简体中文](./README.zh-CN.md) | English

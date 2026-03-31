@@ -1,3 +1,5 @@
+![OICQ 头图](./20260331-1838-generated.jpg)
+
 # OICQ
 
 简体中文 | [English](./README.md)
