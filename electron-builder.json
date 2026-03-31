@@ -1,0 +1,52 @@
+{
+  "appId": "com.oicq.app",
+  "productName": "OICQ",
+  "executableName": "oicq",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "node_modules/**/*",
+    "package.json",
+    "!release{,/**}",
+    "!src{,/**}",
+    "!scripts{,/**}",
+    "!java-lru-cache{,/**}",
+    "!README.md",
+    "!tsconfig.json",
+    "!vite.config.ts",
+    "!electron-builder.json"
+  ],
+  "asar": true,
+  "asarUnpack": [
+    "node_modules/node-pty/**/*"
+  ],
+  "npmRebuild": false,
+  "buildDependenciesFromSource": false,
+  "extraMetadata": {
+    "main": "dist/desktop/main.js"
+  },
+  "artifactName": "oicq-${os}-${arch}.${ext}",
+  "mac": {
+    "category": "public.app-category.developer-tools",
+    "target": [
+      {
+        "target": "zip",
+        "arch": [
+          "arm64"
+        ]
+      }
+    ]
+  },
+  "win": {
+    "target": [
+      {
+        "target": "zip",
+        "arch": [
+          "x64"
+        ]
+      }
+    ]
+  }
+}

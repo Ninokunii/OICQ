@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OICQ</title>
+    <script type="module" src="./app.ts"></script>
+  </head>
+  <body>
+    <div id="app" class="shell">
+      <section class="terminal-pane pane">
+        <header class="pane-header terminal-header">
+          <div class="pane-heading">
+            <span class="pane-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.5 17H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <div class="pane-title" id="terminal-title">终端</div>
+              <div class="pane-subtitle" id="terminal-meta">正在启动...</div>
+            </div>
+          </div>
+        </header>
+        <div class="terminal-body">
+          <div id="terminal"></div>
+        </div>
+      </section>
+
+      <section class="task-pane pane" id="editor-pane">
+        <section class="task-brief">
+          <header class="module-header">
+            <div class="pane-heading">
+              <span class="pane-icon accent-blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 5.75A1.75 1.75 0 018.75 4h6.5A1.75 1.75 0 0117 5.75V18a1 1 0 01-1.447.894L12 17l-3.553 1.894A1 1 0 017 18V5.75z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <div>
+                <div class="module-title" id="editor-title">说明</div>
+              </div>
+            </div>
+          </header>
+          <div class="brief-body">
+            <div id="instructions" class="brief-copy">等待 agent 打开任务。</div>
+          </div>
+        </section>
+
+        <section class="task-editor">
+          <header class="module-header">
+            <div class="pane-heading">
+              <span class="pane-icon accent-gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8.5 8L5 12l3.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M15.5 8L19 12l-3.5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.2 5.5l-2.4 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </span>
+              <div class="module-title">编辑器</div>
+            </div>
+            <div class="editor-actions">
+              <div class="related-code-wrap" id="related-code-wrap">
+                <button type="button" class="ghost-button" id="related-code-button">
+                  <span class="ghost-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7" />
+                    </svg>
+                  </span>
+                  <span>查看相关代码</span>
+                </button>
+                <div class="related-code-popover" id="related-code-popover">
+                  <div class="related-code-title">相关代码</div>
+                  <pre id="related-code-content">当前没有额外相关代码。</pre>
+                </div>
+              </div>
+              <button id="submit" disabled>提交给 Agent</button>
+            </div>
+          </header>
+
+          <div class="editor-shell">
+            <div id="editor"></div>
+          </div>
+
+          <footer class="editor-footer">
+            <div id="hint" class="hint">编辑器内禁止复制粘贴，这一段需要你自己敲。</div>
+          </footer>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>

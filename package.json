@@ -1,0 +1,45 @@
+{
+  "name": "oicq",
+  "version": "1.0.0",
+  "description": "OICQ (OfCourse I Code the Quintessence): split-pane host for Claude Code and Codex with locked user implementation tasks",
+  "main": "dist/index.js",
+  "bin": {
+    "oicq": "dist/index.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/fix-node-pty-helper.mjs",
+    "build": "tsc -p tsconfig.json && vite build",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "app": "electron dist/desktop/main.js",
+    "release:mac": "npm run build && electron-builder --config electron-builder.json --mac zip --arm64 --publish never",
+    "release:win": "npm run build && electron-builder --config electron-builder.json --win zip --x64 --publish never",
+    "release:all": "npm run build && electron-builder --config electron-builder.json --mac zip --arm64 --publish never && electron-builder --config electron-builder.json --win zip --x64 --publish never"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "blessed": "^0.1.81",
+    "diff": "^8.0.2",
+    "monaco-editor": "^0.55.1",
+    "node-pty": "^1.1.0",
+    "vite": "^8.0.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/blessed": "^0.1.27",
+    "@types/node": "^25.5.0",
+    "electron": "^41.0.4",
+    "electron-builder": "^26.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}

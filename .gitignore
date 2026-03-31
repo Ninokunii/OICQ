@@ -1,0 +1,7 @@
+node_modules/
+dist/
+release/
+.oicq-runtime/
+.tmp/
+.DS_Store
+*.log
