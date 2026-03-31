@@ -2,6 +2,14 @@
   "name": "oicq",
   "version": "1.0.0",
   "description": "OICQ (OfCourse I Code the Quintessence): split-pane host for Claude Code and Codex with locked user implementation tasks",
+  "homepage": "https://github.com/Ninokunii/OICQ#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ninokunii/OICQ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ninokunii/OICQ/issues"
+  },
   "main": "dist/index.js",
   "bin": {
     "oicq": "dist/index.js"
@@ -16,9 +24,15 @@
     "release:win": "npm run build && electron-builder --config electron-builder.json --win zip --x64 --publish never",
     "release:all": "npm run build && electron-builder --config electron-builder.json --mac zip --arm64 --publish never && electron-builder --config electron-builder.json --win zip --x64 --publish never"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "electron",
+    "mcp",
+    "cli"
+  ],
+  "author": "Ninokunii",
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=20"
