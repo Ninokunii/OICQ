@@ -4,7 +4,7 @@
 
 > OfCourse I Code the Quintessence
 
-OICQ is an IDE that advocates old-school programming. In an era where vibe coding runs wild, this IDE lets you confidently tell your manager, "Of course the most critical part was handwritten by me."
+OICQ is an IDE that advocates old-school programming. In an era where vibe coding runs wild, this IDE lets you confidently tell your manager, "OfCourse I Code the Quintessence."
 
 ![OICQ screenshot](./20260331-175753.jpg)
 
