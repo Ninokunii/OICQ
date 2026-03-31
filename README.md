@@ -4,9 +4,7 @@
 
 > OfCourse I Code the Quintessence
 
-OICQ is a joke-first wrapper around `claude` and `codex`.
-
-In default mode, it makes the user hand-write exactly one very small function, then lets everyone keep a straight face about how the core part was, of course, written by hand.
+OICQ is an IDE that advocates old-school programming. In an era where vibe coding runs wild, this IDE lets you confidently tell your manager, "Of course the most critical part was handwritten by me."
 
 ![OICQ screenshot](./20260331-175753.jpg)
 
@@ -18,10 +16,7 @@ In default mode, it makes the user hand-write exactly one very small function, t
 
 ## What It Does
 
-- Launches the real `claude` or `codex` CLI in your current workflow.
-- Forces one user-written handoff for each code-changing request.
-- Keeps the default mode intentionally comedic: the user gets a tiny function, but the handoff is presented like an important implementation point.
-- Supports a `--real` mode that flips the joke and hands the user a genuinely difficult, repo-central function instead.
+In every smooth round of vibe coding, it intentionally leaves one extremely difficult function for the user to hand-write, something AI cannot implement on its own. Trust me, it really is extremely difficult.
 
 ## Prerequisites
 
@@ -84,32 +79,7 @@ oicq --provider codex --editor web --cwd /absolute/path/to/repo --real
 
 ## Real Mode
 
-Default mode is the joke:
-
-- the user hand-writes one very small function
-- the handoff is framed as if it were an important implementation point
-
-`--real` changes that behavior:
-
-- the user hand-writes a genuinely difficult, repo-central function
-- the tool stops shielding the user behind a tiny ceremonial helper
-
-## How It Works
-
-1. OICQ creates a session under `.oicq-runtime/`.
-2. It wires an MCP server into `claude` or `codex`.
-3. The agent completes everything except one locked user handoff.
-4. The editor waits for that handoff, writes the user change back to disk, and returns the diff to the agent.
-
-## Building Releases
-
-```bash
-npm install
-npm run release:mac
-npm run release:win
-```
-
-Artifacts are generated into `./release/`.
+For users looking for just a little challenge, try `--real`.
 
 ## Notes
 
